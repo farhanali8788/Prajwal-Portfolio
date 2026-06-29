@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  :root {
+    --gold: #d4af37;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis owns scrolling */
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans;
+    overflow-x: hidden;
+    font-feature-settings: 'ss01', 'cv01';
+  }
+
+  /* Hide native cursor on devices that have a real pointer.
+     Touch devices keep their default behaviour. */
+  @media (hover: hover) and (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: #090909;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+  }
+
+  img {
+    @apply select-none;
+  }
+}
+
+/* ============================================================
+   COMPONENTS / UTILITIES
+   ============================================================ */
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-frame px-6 md:px-10 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-ultra text-gold;
+  }
+
+  .section-index {
+    @apply font-mono text-[11px] uppercase tracking-[0.3em] text-muted;
+  }
+
+  /* Display headings, cinematic */
+  .h-display {
+    @apply font-display uppercase leading-[0.86] tracking-[0.01em];
+  }
+
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(180deg, #f4e6b0 0%, #d4af37 55%, #9c7c1f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glass card */
+  .glass {
+    background: rgba(24, 24, 24, 0.55);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .hairline {
+    @apply h-px w-full bg-line;
+  }
+}
+
+@layer utilities {
+  /* Viewfinder corner brackets — the site's signature device */
+  .viewfinder {
+    position: relative;
+  }
+  .viewfinder::before,
+  .viewfinder::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: rgba(212, 175, 55, 0.7);
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .viewfinder::before {
+    top: 10px;
+    left: 10px;
+    border-top: 1.5px solid;
+    border-left: 1.5px solid;
+  }
+  .viewfinder::after {
+    bottom: 10px;
+    right: 10px;
+    border-bottom: 1.5px solid;
+    border-right: 1.5px solid;
+  }
+  .viewfinder:hover::before {
+    top: 6px;
+    left: 6px;
+  }
+  .viewfinder:hover::after {
+    bottom: 6px;
+    right: 6px;
+  }
+
+  /* Cinematic vignette */
+  .vignette::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 120% at 50% 40%,
+      transparent 55%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  }
+
+  /* Film grain overlay (used by FilmGrain component) */
+  .grain-layer {
+    position: fixed;
+    inset: -150%;
+    width: 400%;
+    height: 400%;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: grain 8s steps(10) infinite;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .grain-layer {
+    display: none;
+  }
+}
