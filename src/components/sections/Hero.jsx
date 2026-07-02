@@ -145,7 +145,7 @@ export default function Hero({ onShowreel }) {
             </div>
             {/* caption tag */}
             <div className="glass absolute -bottom-5 -left-5 hidden rounded-lg px-4 py-3 sm:block">
-              <p className="font-display text-2xl leading-none text-gold">5+</p>
+              <p className="font-display text-2xl leading-none text-gold">3+</p>
               <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">
                 Years on set
               </p>
