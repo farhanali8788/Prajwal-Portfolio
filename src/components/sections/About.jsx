@@ -1,7 +1,7 @@
-import Reveal from '../ui/Reveal'
-import SectionHeader from '../ui/SectionHeader'
-import Counter from '../ui/Counter'
-import { aboutCopy, stats, services, profile, award } from '../../data/content'
+import Reveal from "../ui/Reveal";
+import SectionHeader from "../ui/SectionHeader";
+import Counter from "../ui/Counter";
+import { aboutCopy, stats, services, profile, award } from "../../data/content";
 
 export default function About() {
   return (
@@ -30,11 +30,16 @@ export default function About() {
               {/* now playing strip */}
               <div className="glass mt-6 flex items-center justify-between rounded-lg px-5 py-4">
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">Currently</p>
-                  <p className="mt-1 font-display text-2xl uppercase tracking-wide text-ink">{profile.company}</p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+                    Currently
+                  </p>
+                  <p className="mt-1 font-display text-2xl uppercase tracking-wide text-ink">
+                    {profile.company}
+                  </p>
                 </div>
                 <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-gold">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" /> On set
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />{" "}
+                  On set
                 </span>
               </div>
             </Reveal>
@@ -70,14 +75,23 @@ export default function About() {
             <Reveal dir="up" delay={0.15}>
               <div className="mt-9 flex items-start gap-4 rounded-xl border border-gold/25 bg-gold/[0.04] p-5">
                 <span className="mt-0.5 text-gold">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
                     <circle cx="12" cy="8" r="5" />
                     <path d="M8.5 12.5L7 22l5-3 5 3-1.5-9.5" />
                   </svg>
                 </span>
                 <div>
                   <p className="font-medium text-ink">{award.title}</p>
-                  <p className="mt-1 text-sm text-muted">{award.event} · {award.by}</p>
+                  <p className="mt-1 text-sm text-muted">
+                    {award.event} · {award.by}
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -85,13 +99,19 @@ export default function About() {
         </div>
 
         {/* stats */}
-        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:mt-24 md:grid-cols-4">
+        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:mt-24 md:grid-cols-3">
           {stats.map((s, i) => (
             <Reveal key={i} dir="up" delay={i * 0.08} className="bg-bg">
               <div className="group flex h-full flex-col justify-between px-6 py-9 transition-colors duration-500 hover:bg-card md:px-8 md:py-12">
-                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <p className="mt-8 font-display text-6xl leading-none text-ink transition-colors group-hover:text-gold md:text-7xl">
-                  <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
+                  <Counter
+                    value={s.value}
+                    prefix={s.prefix}
+                    suffix={s.suffix}
+                  />
                 </p>
                 <p className="mt-3 text-sm text-muted">{s.label}</p>
               </div>
@@ -100,5 +120,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

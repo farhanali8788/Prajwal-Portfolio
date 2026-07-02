@@ -19,15 +19,15 @@ export const profile = {
   role: "Cinematographer & Editor",
   // NOTE: the brief asked for "5+ years". The CV states 3+ years.
   // Set whichever is accurate — it is only referenced here.
-  yearsLabel: "5+ Years of Creating Visual Stories",
+  yearsLabel: "3+ Years of Creating Visual Stories",
   basedIn: "Nagpur · Pune, India",
   company: "Media Forum",
   tagline:
     "I don’t just record moments.\nI create emotions that people remember.",
-  email: "hello@prajwalkokate333.com",
+  email: "prajwalkokate333@gmail.com",
   phone: "+91 99758 41931",
   whatsapp: "+91 94223 89529",
-  website: "prajwalkokate333.com",
+
   instagram: "_sanskari_",
   // Drop a file at /public/showreel.mp4 and set this to '/showreel.mp4'
   // to make the "Watch Showreel" button play a real video.
@@ -43,7 +43,7 @@ export const nav = [
 ];
 
 export const aboutCopy = [
-  "For over five years I have lived behind the camera — shaping light, framing tension, and cutting moments into stories that stay with people long after the screen goes dark.",
+  "For over three years I have lived behind the camera — shaping light, framing tension, and cutting moments into stories that stay with people long after the screen goes dark.",
   "My work moves between commercial films, brand films, real estate, advertisements and podcasts. Whether it is a fast cut for a gym or a slow, deliberate frame for a cafe, the craft is the same: find the emotion, then build everything around it.",
   "I currently create with Media Forum, and freelance with brands who care about how their story looks and feels.",
 ];
@@ -52,7 +52,7 @@ export const stats = [
   { value: 500, suffix: "+", label: "Real Estate Shoots" },
   { value: 200, suffix: "+", label: "Commercial Projects" },
   { value: 100, suffix: "+", label: "Freelance Edits" },
-  { value: 1, prefix: "", suffix: "st", label: "Best Cinematography" },
+  // { value: 1, prefix: "", suffix: "st", label: "Best Cinematography" },
 ];
 
 export const services = [
@@ -195,10 +195,10 @@ export const behindTheScenes = [
 export const skills = [
   { name: "Premiere Pro", note: "Edit" },
   { name: "After Effects", note: "Motion" },
-  { name: "DaVinci Resolve", note: "Grade" },
-  { name: "Photoshop", note: "Design" },
-  { name: "CapCut", note: "Short-form" },
-  { name: "VN Editor", note: "Mobile" },
+  // { name: "DaVinci Resolve", note: "Grade" },
+  // { name: "Photoshop", note: "Design" },
+  // { name: "CapCut", note: "Short-form" },
+  // { name: "VN Editor", note: "Mobile" },
   { name: "Color Grading", note: "Look" },
   { name: "Lighting", note: "Light" },
   { name: "Camera Operation", note: "Shoot" },
