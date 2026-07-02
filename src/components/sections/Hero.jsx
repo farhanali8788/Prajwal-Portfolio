@@ -1,29 +1,29 @@
-import { useRef } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { FiArrowDownRight, FiPlay } from 'react-icons/fi'
-import { profile } from '../../data/content'
-import { WordReveal } from '../ui/Reveal'
-import MagneticButton from '../ui/MagneticButton'
+import { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { FiArrowDownRight, FiPlay } from "react-icons/fi";
+import { profile } from "../../data/content";
+import { WordReveal } from "../ui/Reveal";
+import MagneticButton from "../ui/MagneticButton";
 
 export default function Hero({ onShowreel }) {
-  const ref = useRef(null)
-  const mx = useMotionValue(0)
-  const my = useMotionValue(0)
-  const sx = useSpring(mx, { stiffness: 60, damping: 18 })
-  const sy = useSpring(my, { stiffness: 60, damping: 18 })
+  const ref = useRef(null);
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const sx = useSpring(mx, { stiffness: 60, damping: 18 });
+  const sy = useSpring(my, { stiffness: 60, damping: 18 });
 
   // background drifts opposite to the cursor; photo drifts with it
-  const bgX = useTransform(sx, [-0.5, 0.5], [20, -20])
-  const bgY = useTransform(sy, [-0.5, 0.5], [16, -16])
-  const photoX = useTransform(sx, [-0.5, 0.5], [-26, 26])
-  const photoY = useTransform(sy, [-0.5, 0.5], [-18, 18])
-  const leakX = useTransform(sx, [-0.5, 0.5], [40, -40])
+  const bgX = useTransform(sx, [-0.5, 0.5], [20, -20]);
+  const bgY = useTransform(sy, [-0.5, 0.5], [16, -16]);
+  const photoX = useTransform(sx, [-0.5, 0.5], [-26, 26]);
+  const photoY = useTransform(sy, [-0.5, 0.5], [-18, 18]);
+  const leakX = useTransform(sx, [-0.5, 0.5], [40, -40]);
 
   const handleMove = (e) => {
-    const r = ref.current.getBoundingClientRect()
-    mx.set((e.clientX - r.left) / r.width - 0.5)
-    my.set((e.clientY - r.top) / r.height - 0.5)
-  }
+    const r = ref.current.getBoundingClientRect();
+    mx.set((e.clientX - r.left) / r.width - 0.5);
+    my.set((e.clientY - r.top) / r.height - 0.5);
+  };
 
   return (
     <section
@@ -33,7 +33,10 @@ export default function Hero({ onShowreel }) {
       className="vignette relative flex min-h-[100svh] items-center overflow-hidden"
     >
       {/* ---- background layers ---- */}
-      <motion.div style={{ x: bgX, y: bgY }} className="absolute inset-0 -z-10 scale-110">
+      <motion.div
+        style={{ x: bgX, y: bgY }}
+        className="absolute inset-0 -z-10 scale-110"
+      >
         {/* OPTIONAL VIDEO: drop a file in /public and uncomment.
         <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40">
           <source src="/showreel.mp4" type="video/mp4" />
@@ -43,7 +46,7 @@ export default function Hero({ onShowreel }) {
         <motion.div
           className="absolute inset-0 bg-[url('/assets/bts-1.jpg')] bg-cover bg-center opacity-[0.10] mix-blend-luminosity"
           animate={{ scale: [1, 1.12, 1] }}
-          transition={{ duration: 26, ease: 'easeInOut', repeat: Infinity }}
+          transition={{ duration: 26, ease: "easeInOut", repeat: Infinity }}
         />
       </motion.div>
 
@@ -69,7 +72,9 @@ export default function Hero({ onShowreel }) {
               {profile.role}
             </span>
             <span className="h-px w-12 bg-line" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted">{profile.basedIn}</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted">
+              {profile.basedIn}
+            </span>
           </motion.div>
 
           <h1 className="h-display mt-6 text-[clamp(3.6rem,12vw,11rem)]">
@@ -117,16 +122,18 @@ export default function Hero({ onShowreel }) {
             <div className="animate-float">
               <div className="viewfinder relative overflow-hidden">
                 <img
-                  src="/assets/bts-2.jpg"
+                  src="/assets/prajwal-gold.png"
                   alt="Prajwal reviewing a shot on the camera monitor"
-                  className="aspect-[4/5] w-full object-cover"
+                  className="aspect-[4/5] w-full scale-x-[-1] grayscale object-cover"
                   loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-bg/10" />
                 {/* REC overlay */}
                 <div className="absolute left-4 top-4 flex items-center gap-2">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/80">Rec</span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/80">
+                    Rec
+                  </span>
                 </div>
                 <div className="absolute right-4 top-4 font-mono text-[10px] tracking-widest text-ink/70">
                   00:24:11:08
@@ -139,7 +146,9 @@ export default function Hero({ onShowreel }) {
             {/* caption tag */}
             <div className="glass absolute -bottom-5 -left-5 hidden rounded-lg px-4 py-3 sm:block">
               <p className="font-display text-2xl leading-none text-gold">5+</p>
-              <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">Years on set</p>
+              <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted">
+                Years on set
+              </p>
             </div>
           </motion.div>
         </div>
@@ -154,15 +163,17 @@ export default function Hero({ onShowreel }) {
         transition={{ delay: 1.6 }}
         className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
-        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">Scroll</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+          Scroll
+        </span>
         <span className="relative h-10 w-px overflow-hidden bg-line">
           <motion.span
             className="absolute left-0 top-0 h-3 w-px bg-gold"
             animate={{ y: [-12, 40] }}
-            transition={{ duration: 1.8, ease: 'easeInOut', repeat: Infinity }}
+            transition={{ duration: 1.8, ease: "easeInOut", repeat: Infinity }}
           />
         </span>
       </motion.a>
     </section>
-  )
+  );
 }
