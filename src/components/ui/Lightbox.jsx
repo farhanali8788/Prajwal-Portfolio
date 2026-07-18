@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { FiX, FiChevronLeft, FiChevronRight, FiPlay } from 'react-icons/fi'
+import { resolveVideo } from '../../utils/video'
 
 /**
  * Shared lightbox for the gallery and the project modal.
@@ -10,6 +11,7 @@ import { FiX, FiChevronLeft, FiChevronRight, FiPlay } from 'react-icons/fi'
 export default function Lightbox({ items, index, setIndex, onClose }) {
   const item = items[index]
   const many = items.length > 1
+  const video = resolveVideo(item?.video)
 
   const go = useCallback(
     (dir) => {
@@ -88,9 +90,19 @@ export default function Lightbox({ items, index, setIndex, onClose }) {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         onClick={(e) => e.stopPropagation()}
       >
-        {item.video ? (
+        {video?.kind === 'drive' ? (
+          <div className="aspect-video max-h-[78vh] w-full bg-black">
+            <iframe
+              src={video.src}
+              title={item.title || 'Video'}
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              className="h-full w-full"
+            />
+          </div>
+        ) : video?.kind === 'file' ? (
           <video
-            src={item.video}
+            src={video.src}
             controls
             autoPlay
             playsInline
