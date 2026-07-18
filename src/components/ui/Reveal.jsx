@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion'
 
 const variants = {
-  up: { y: 40, opacity: 0, filter: 'blur(6px)' },
-  down: { y: -40, opacity: 0, filter: 'blur(6px)' },
-  left: { x: 50, opacity: 0, filter: 'blur(6px)' },
-  right: { x: -50, opacity: 0, filter: 'blur(6px)' },
+  up: { y: 40, opacity: 0 },
+  down: { y: -40, opacity: 0 },
+  left: { x: 50, opacity: 0 },
+  right: { x: -50, opacity: 0 },
   fade: { opacity: 0 },
   scale: { scale: 0.92, opacity: 0 },
 }
 
-const shown = { x: 0, y: 0, opacity: 1, scale: 1, filter: 'blur(0px)' }
+const shown = { x: 0, y: 0, opacity: 1, scale: 1 }
 
 /**
  * Generic scroll reveal. Wrap any block:

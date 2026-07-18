@@ -56,7 +56,7 @@ export default function Contact() {
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[url('/assets/bts-3.jpg')] bg-cover bg-center opacity-[0.07] mix-blend-luminosity" />
         <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_0%,#15120a_0%,#0a0a0a_55%,#070707_100%)]" />
-        <div className="absolute -left-24 bottom-0 h-[420px] w-[420px] rounded-full bg-gold/10 blur-[130px] animate-leak" />
+        <div className="absolute -left-24 bottom-0 h-[420px] w-[420px] rounded-full bg-gold/10 blur-[130px] animate-leak will-change-transform" />
       </div>
 
       <div className="shell">

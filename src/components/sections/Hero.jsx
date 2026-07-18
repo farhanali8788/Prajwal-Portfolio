@@ -44,7 +44,7 @@ export default function Hero({ onShowreel }) {
         <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_70%_10%,#16130c_0%,#0b0b0b_45%,#070707_100%)]" />
         {/* slow zoom faint backdrop */}
         <motion.div
-          className="absolute inset-0 bg-[url('/assets/bts-1.jpg')] bg-cover bg-center opacity-[0.10] mix-blend-luminosity"
+          className="absolute inset-0 bg-[url('/assets/bts-1.jpg')] bg-cover bg-center opacity-[0.10] mix-blend-luminosity will-change-transform"
           animate={{ scale: [1, 1.12, 1] }}
           transition={{ duration: 26, ease: "easeInOut", repeat: Infinity }}
         />
@@ -53,7 +53,7 @@ export default function Hero({ onShowreel }) {
       {/* light leaks */}
       <motion.div
         style={{ x: leakX }}
-        className="pointer-events-none absolute -left-20 top-1/4 -z-10 h-[480px] w-[480px] rounded-full bg-gold/10 blur-[120px] animate-leak"
+        className="pointer-events-none absolute -left-20 top-1/4 -z-10 h-[480px] w-[480px] rounded-full bg-gold/10 blur-[120px] animate-leak will-change-transform"
       />
       <div className="pointer-events-none absolute -right-32 bottom-0 -z-10 h-[520px] w-[520px] rounded-full bg-[#3a2f12]/30 blur-[140px]" />
 
