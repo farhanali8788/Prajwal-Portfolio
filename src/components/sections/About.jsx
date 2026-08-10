@@ -14,7 +14,7 @@ export default function About() {
               <div className="viewfinder relative">
                 <div className="relative overflow-hidden">
                   <img
-                    src="/assets/bts-1.jpg"
+                    src="/assets/IMG_0030_2.PNG"
                     alt="Prajwal Kokate behind the camera on location"
                     className="aspect-[4/5] w-full object-cover grayscale-[0.2] transition-all duration-700 ease-cine hover:grayscale-0"
                     loading="lazy"
