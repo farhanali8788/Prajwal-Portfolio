@@ -119,58 +119,67 @@ export const award = {
 // covers are sample placeholders. Swap `client`, `cover` and `video`.
 export const works = [
   {
-    title: "The Empty Room",
-    category: "Real Estate",
-    client: "Private Developer",
-    year: "2024",
-    cover: "/assets/bts-2.jpg",
-    video: "",
-    ratio: "tall",
+    title: "The Hazra Falls",
+    category: "Documentory",
+    client: "Forest Department",
+    year: "2026",
+    cover: "/assets/hazra_falls_TN.webp",
+    video:
+      "https://drive.google.com/file/d/1Bpn7xmaa2V44E_5sMm0N6ClqBeYP2RVg/view?usp=drive_link",
+    ratio: "wide",
   },
+
   {
-    title: "Vithoba — Flavour Film",
-    category: "Brand Film",
-    client: "Vithoba",
-    year: "2023",
-    cover: "/assets/bts-3.jpg",
-    video: "",
+    title: "Earth Day",
+    category: "Cinematic Video",
+    // client: "",
+    year: "2025",
+    cover: "/assets/Earth_Day.png",
+    video:
+      "https://drive.google.com/file/d/1dBQXzrvvuA8Z40CVnuQHQYbeqLUPuuQQ/view?usp=drive_link",
     ratio: "wide",
   },
   {
-    title: "Iron & Sweat",
-    category: "Gym",
-    client: "Local Studio",
+    title: "Nazariya",
+    category: "Shortfilm",
+    // client: "Studio Session",
     year: "2024",
-    cover: "/assets/bts-1.jpg",
-    video: "",
+    cover: "/assets/nazariya.png",
+    video:
+      "https://drive.google.com/file/d/1CGCMGc13fvIdlWnJTTsmlpmI_z3CsSFZ/view?usp=drive_link",
     ratio: "wide",
   },
   {
-    title: "Slow Mornings",
-    category: "Cafe",
-    client: "Independent Cafe",
-    year: "2023",
-    cover: "/assets/bts-2.jpg",
-    video: "",
-    ratio: "tall",
-  },
-  {
-    title: "On The Record",
-    category: "Podcast",
-    client: "Studio Session",
-    year: "2024",
-    cover: "/assets/bts-3.jpg",
-    video: "",
+    title: "Environment Day",
+    category: "Cinematic",
+    // client: "Local Studio",
+    year: "2026",
+    cover: "/assets/Environment_day.webp",
+    video:
+      "https://drive.google.com/file/d/14dF04QGOIvKL2tLmHoGIx1xVPz4zaVD6/view?usp=drive_link",
     ratio: "wide",
   },
+
   {
-    title: "Plated",
-    category: "Restaurant",
-    client: "Fine Dining",
-    year: "2023",
-    cover: "/assets/bts-1.jpg",
-    video: "",
-    ratio: "tall",
+    title: "Mother's Day",
+    category: "Cinematic",
+    // client: "Independent Cafe",
+    year: "2026",
+    cover: "/assets/mother's_day.webp",
+    video:
+      "https://drive.google.com/file/d/1-zy2PRdsQkL023KgEuuMBE2YA5PnQD5r/view?usp=drive_link",
+    ratio: "wide",
+  },
+
+  {
+    title: "Labour's Day",
+    category: "Cinematic",
+    // client: "Fine Dining",
+    year: "2026",
+    cover: "/assets/labour's_day.png",
+    video:
+      "https://drive.google.com/file/d/1azFRjiv5mgEjt-S73Ma3MVdQc6tVPFT4/view?usp=drive_link",
+    ratio: "wide",
   },
 ];
 
