@@ -1,42 +1,35 @@
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX } from 'react-icons/fi'
-import { nav, profile } from '../../data/content'
-import MagneticButton from '../ui/MagneticButton'
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
+import { nav, profile } from "../../data/content";
+import MagneticButton from "../ui/MagneticButton";
 
 function Logo() {
   return (
-    <a href="#top" data-cursor="link" className="flex items-center gap-3">
-      <svg width="26" height="26" viewBox="0 0 100 100" className="text-gold">
-        <circle cx="50" cy="50" r="32" fill="none" stroke="currentColor" strokeWidth="3" />
-        <path
-          d="M50 18 L66 47 M78 38 L44 38 M70 66 L54 36 M50 82 L34 53 M22 62 L56 62 M30 34 L46 64"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-        />
-      </svg>
-      <span className="font-display text-xl uppercase leading-none tracking-wide text-ink">
-        Prajwal<span className="text-gold">.</span>
-      </span>
+    <a href="#top" data-cursor="link" className="flex items-center">
+      <img
+        src="/logo_2.png"
+        alt="Prajwal Kokate"
+        className="h-29 w-auto md:h-16"
+      />
     </a>
-  )
+  );
 }
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-  }, [open])
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
 
   return (
     <>
@@ -46,8 +39,8 @@ export default function Navbar() {
         transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 ease-cine ${
           scrolled
-            ? 'border-b border-line/70 bg-bg/70 py-3 backdrop-blur-xl'
-            : 'border-b border-transparent bg-transparent py-6'
+            ? "border-b border-line/70 bg-bg/70 py-3 backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent py-6"
         }`}
       >
         <nav className="shell flex items-center justify-between">
@@ -114,29 +107,43 @@ export default function Navbar() {
                   key={item.href}
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.08 * i + 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{
+                    delay: 0.08 * i + 0.1,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                 >
                   <a
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className="flex items-baseline gap-4 border-b border-line/60 py-4"
                   >
-                    <span className="font-mono text-xs text-gold">0{i + 1}</span>
-                    <span className="font-display text-4xl uppercase tracking-wide text-ink">{item.label}</span>
+                    <span className="font-mono text-xs text-gold">
+                      0{i + 1}
+                    </span>
+                    <span className="font-display text-4xl uppercase tracking-wide text-ink">
+                      {item.label}
+                    </span>
                   </a>
                 </motion.li>
               ))}
             </ul>
 
             <div className="mt-10 px-6">
-              <MagneticButton variant="gold" href="#contact" onClick={() => setOpen(false)} className="w-full">
+              <MagneticButton
+                variant="gold"
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="w-full"
+              >
                 Let’s Create
               </MagneticButton>
-              <p className="mt-6 font-mono text-xs text-muted">{profile.basedIn}</p>
+              <p className="mt-6 font-mono text-xs text-muted">
+                {profile.basedIn}
+              </p>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

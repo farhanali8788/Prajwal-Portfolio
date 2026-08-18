@@ -28,7 +28,7 @@
   /* Hide native cursor on devices that have a real pointer.
      Touch devices keep their default behaviour. */
   @media (hover: hover) and (pointer: fine) {
-    * {
+    html.has-custom-cursor * {
       cursor: none !important;
     }
   }

@@ -1,14 +1,14 @@
-import { FiArrowUp, FiAperture } from 'react-icons/fi'
-import { profile, socials } from '../../data/content'
+import { FiArrowUp, FiAperture } from "react-icons/fi";
+import { profile, socials } from "../../data/content";
 
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   const toTop = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Lenis intercepts #top anchors; this is the no-JS-scroll fallback.
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="relative overflow-hidden border-t border-line/60 bg-surface">
@@ -16,7 +16,10 @@ export default function Footer() {
       <div className="shell pt-20 md:pt-28">
         <div className="flex items-start justify-between gap-6">
           <div className="flex items-center gap-3 text-gold">
-            <FiAperture size={26} className="animate-[spin_18s_linear_infinite]" />
+            <FiAperture
+              size={26}
+              className="animate-[spin_18s_linear_infinite]"
+            />
             <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
               Cinematographer · Editor
             </span>
@@ -36,10 +39,11 @@ export default function Footer() {
           </a>
         </div>
 
-        <h2 className="mt-10 font-display leading-[0.82] tracking-tight text-ink">
-          <span className="block text-[clamp(3.5rem,18vw,16rem)]">PRAJWAL</span>
-          <span className="block text-[clamp(3.5rem,18vw,16rem)] text-gold-gradient">KOKATE</span>
-        </h2>
+        <img
+          src="/logo_2.png"
+          alt="Prajwal Kokate"
+          className="mt-2 h-auto max-h-[13rem] w-auto max-w-full"
+        />
 
         <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
           Creating stories one frame at a time.
@@ -75,5 +79,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
