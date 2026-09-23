@@ -15,7 +15,7 @@ import About from "./components/sections/About";
 import Work from "./components/sections/Work";
 import Experience from "./components/sections/Experience";
 // import Gallery from './components/sections/Gallery'
-import BehindTheScenes from "./components/sections/BehindTheScenes";
+// import BehindTheScenes from "./components/sections/BehindTheScenes";
 import Skills from "./components/sections/Skills";
 import Equipment from "./components/sections/Equipment";
 import Awards from "./components/sections/Awards";
@@ -79,7 +79,7 @@ export default function App() {
         <Work />
         <Experience />
         {/* <Gallery /> */}
-        <BehindTheScenes />
+        {/* <BehindTheScenes /> */}
         <Skills />
         <Equipment />
         <Awards />

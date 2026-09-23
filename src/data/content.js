@@ -184,28 +184,28 @@ export const works = [
 ];
 
 // Gallery + Behind the scenes share the uploaded BTS frames.
-export const gallery = [
-  { src: "/assets/bts-1.jpg", tag: "On Location", span: "lg" },
-  { src: "/assets/bts-2.jpg", tag: "The Monitor", span: "sm" },
-  { src: "/assets/bts-3.jpg", tag: "Direction", span: "sm" },
-  { src: "/assets/bts-2.jpg", tag: "Framing", span: "sm" },
-  { src: "/assets/bts-1.jpg", tag: "Golden Hour", span: "sm" },
-  { src: "/assets/bts-3.jpg", tag: "The Crew", span: "lg" },
-];
+// export const gallery = [
+//   { src: "/assets/bts-1.jpg", tag: "On Location", span: "lg" },
+//   { src: "/assets/bts-2.jpg", tag: "The Monitor", span: "sm" },
+//   { src: "/assets/bts-3.jpg", tag: "Direction", span: "sm" },
+//   { src: "/assets/bts-2.jpg", tag: "Framing", span: "sm" },
+//   { src: "/assets/bts-1.jpg", tag: "Golden Hour", span: "sm" },
+//   { src: "/assets/bts-3.jpg", tag: "The Crew", span: "lg" },
+// ];
 
-export const behindTheScenes = [
-  {
-    src: "/assets/bts-1.jpg",
-    label: "Camera",
-    n: "01",
-    video:
-      "https://drive.google.com/file/d/1ZpwQFzhOdhQIXvFLK508b8hDy7hdh--N/view",
-  },
-  { src: "/assets/bts-3.jpg", label: "Direction", n: "02", video: "" },
-  { src: "/assets/bts-2.jpg", label: "The Monitor", n: "03", video: "" },
-  { src: "/assets/bts-1.jpg", label: "Lighting", n: "04", video: "" },
-  { src: "/assets/bts-3.jpg", label: "The Crew", n: "05", video: "" },
-];
+// export const behindTheScenes = [
+//   {
+//     src: "/assets/bts-1.jpg",
+//     label: "Camera",
+//     n: "01",
+//     video:
+//       "https://drive.google.com/file/d/1ZpwQFzhOdhQIXvFLK508b8hDy7hdh--N/view",
+//   },
+//   { src: "/assets/bts-3.jpg", label: "Direction", n: "02", video: "" },
+//   { src: "/assets/bts-2.jpg", label: "The Monitor", n: "03", video: "" },
+//   { src: "/assets/bts-1.jpg", label: "Lighting", n: "04", video: "" },
+//   { src: "/assets/bts-3.jpg", label: "The Crew", n: "05", video: "" },
+// ];
 
 export const skills = [
   { name: "Premiere Pro", note: "Edit" },
