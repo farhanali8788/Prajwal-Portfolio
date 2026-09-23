@@ -39,11 +39,14 @@ export default function Footer() {
           </a>
         </div>
 
-        <img
-          src="/logo_2.png"
-          alt="Prajwal Kokate"
-          className="mt-2 h-auto max-h-[13rem] w-auto max-w-full"
-        />
+        <h2 className="mt-10 font-display uppercase leading-[0.82] tracking-tight">
+          <span className="block text-[clamp(3.5rem,18vw,16rem)] text-ink">
+            Prajwal
+          </span>
+          <span className="block text-[clamp(3.5rem,18vw,16rem)] text-gold-gradient">
+            Kokate
+          </span>
+        </h2>
 
         <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
           Creating stories one frame at a time.

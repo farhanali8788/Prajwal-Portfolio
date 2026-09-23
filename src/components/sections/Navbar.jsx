@@ -6,12 +6,21 @@ import MagneticButton from "../ui/MagneticButton";
 
 function Logo() {
   return (
-    <a href="#top" data-cursor="link" className="flex items-center">
-      <img
-        src="/logo_2.png"
-        alt="Prajwal Kokate"
-        className="h-29 w-auto md:h-16"
-      />
+    <a
+      href="#top"
+      data-cursor="link"
+      aria-label="Prajwal Kokate — back to top"
+      className="group flex flex-col leading-none"
+    >
+      <span className="font-display text-[1.6rem] uppercase tracking-[0.06em] text-ink md:text-[1.85rem]">
+        Prajwal
+        <span className="text-gold transition-opacity duration-500 group-hover:opacity-60">
+          .
+        </span>
+      </span>
+      <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.45em] text-muted transition-colors duration-500 group-hover:text-gold">
+        Kokate
+      </span>
     </a>
   );
 }

@@ -129,7 +129,7 @@ export default function Hero({ onShowreel }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-bg/10" />
                 {/* REC overlay */}
-                <div className="absolute left-4 top-4 flex items-center gap-2">
+                <div className="absolute bottom-4 left-4 flex items-center gap-2">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink/80">
                     Rec
